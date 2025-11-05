@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
+/* ── Token di base (tema chiaro) ───────────────────────────── */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+  --accent: #2563EB; /* colore accento */
 }
 
+/* Mappo i token per Tailwind v4 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+
+  /* opzionale: font */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 🔴 RIMOSSO il media-query dark per restare in light.
+   Se vuoi il dark più avanti, lo reintroduciamo con token dedicati. */
+
+/* ── Base tipografia e accessibilità ───────────────────────── */
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-background text-foreground antialiased; }
+  h1,h2,h3 { @apply tracking-tight text-foreground; }
+  p { @apply text-neutral-700 leading-relaxed; }
+  a { @apply underline underline-offset-4 decoration-neutral-300 hover:decoration-accent; }
+  ::placeholder { @apply text-neutral-400; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* ── Utility riutilizzabili (v4: @utility) ─────────────────── */
+@utility btn { @apply inline-flex items-center justify-center rounded-2xl px-4 py-3 font-medium; }
+@utility btn-primary { @apply btn bg-accent text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent/40; }
+@utility btn-ghost { @apply btn border border-neutral-300 text-foreground hover:bg-neutral-100; }
+@utility card { @apply rounded-2xl border border-neutral-200 bg-white; }
+@utility field { @apply w-full rounded-xl border border-neutral-300 bg-white px-3 py-2 text-foreground placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-accent/40; }
+@utility label { @apply block text-sm text-foreground mb-1; }
+@utility muted { @apply text-sm text-neutral-600; }
