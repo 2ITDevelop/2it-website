@@ -16,7 +16,7 @@ export default function Navbar() {
             Portfolio
           </Link>
           <Link href="/chi-sono" className="hover:opacity-70">
-            Chi sono
+            Chi siamo
           </Link>
           <Link href="/contatti" className="hover:opacity-70">
             Contatti
