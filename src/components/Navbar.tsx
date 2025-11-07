@@ -1,13 +1,22 @@
 import Link from 'next/link';
 import { SITE } from '@/data/config';
+import Image from "next/image";
+
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-neutral-200">
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="font-semibold tracking-tight text-xl">
-          {SITE.name}
-        </Link>
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo.png"
+            alt="Logo 2IT"
+            width={90}
+            height={26}
+            priority
+            />
+          </Link>
+
         <nav className="hidden sm:flex items-center gap-6 text-sm">
           <Link href="/servizi" className="hover:opacity-70">
             Servizi
