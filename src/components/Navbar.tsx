@@ -18,21 +18,21 @@ export default function Navbar() {
           </Link>
 
         <nav className="hidden sm:flex items-center gap-6 text-sm">
-          <Link href="/servizi" className="hover:opacity-70">
+          <Link href="/servizi" className="hover:opacity-70 font-semibold">
             Servizi
           </Link>
-          <Link href="/portfolio" className="hover:opacity-70">
+          <Link href="/portfolio" className="hover:opacity-70 font-semibold">
             Portfolio
           </Link>
-          <Link href="/chi-sono" className="hover:opacity-70">
+          <Link href="/chi-sono" className="hover:opacity-70 font-semibold">
             Chi siamo
           </Link>
-          <Link href="/contatti" className="hover:opacity-70">
+          <Link href="/contatti" className="hover:opacity-70 font-semibold">
             Contatti
           </Link>
           <a
             href={`https://wa.me/${SITE.whatsapp}`}
-            className="inline-block rounded-xl border border-neutral-200 px-3 py-2 hover:bg-neutral-100 transition"
+            className="inline-block rounded-xl border border-blue-300 px-3 py-2 hover:bg-neutral-100 transition font-semibold"
           >
             WhatsApp
           </a>
