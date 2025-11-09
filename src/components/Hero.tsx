@@ -1,4 +1,5 @@
 import { SITE } from '@/data/config';
+import { Pill } from "@/components/Pill";
 
 export default function Hero() {
   return (
@@ -28,17 +29,20 @@ export default function Hero() {
       <div className="relative z-10 mx-auto max-w-6xl px-4">
       {/*<span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500">
         <span className="h-1.5 w-1.5 rounded-full bg-neutral-900" />*/}
-      <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-widest text-white/70 bg-black/20 rounded-full px-3 py-1 backdrop-blur">
+      {/* <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-widest text-white/70 bg-black/20 rounded-full px-3 py-1 backdrop-blur">
       <span className="h-1.5 w-1.5 rounded-full bg-white/80" />
             Soluzioni web su misura per aziende e professionisti — Genova / Italia
-      </span>
+      </span>*/}
+      <Pill>Soluzioni web su misura — Genova / Italia</Pill>
+
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-left">
-        <h1 className="text-5xl sm:text-6xl font-semibold leading-tight text-white/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
-          <span className="block">Rendo online la tua attività:</span>
-          <span className="bg-linear-to-r from-sky-300 to-blue-500 bg-clip-text text-transparent">
-            semplice, rapido, chiaro
-          </span>
+        <h1 className="mt-6 text-5xl sm:text-6xl font-semibold leading-tight text-white/95
+               drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
+          Rendo online la tua attività:
+        <span className="block bg-linear-to-r from-sky-300 to-blue-500 bg-clip-text text-transparent">
+          semplice, rapido, chiaro
+         </span>
         </h1>
       </div>
       
