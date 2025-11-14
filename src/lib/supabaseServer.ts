@@ -1,13 +1,13 @@
-import { createClient } from '@supabase/supabase-js'; //connessione con supabase (creiamo l'oggetto per la connessione con il DB)
+// src/lib/supabaseServer.ts
+import { createClient } from '@supabase/supabase-js';
 
-const hasSupabaseEnv = !!process.env.SUPABASE_URL && !!process.env.SUPABASE_SERVICE_ROLE_KEY; // controlla se sono presenti le variabili per il DB ovvero URL e KAY di accesso
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-export function getSupabaseServer() {
-  if (!hasSupabaseEnv) return null; //verifica dell'esistenza delle variabili
-  return createClient(
-    //costruzione del client Supabase
-    process.env.SUPABASE_URL!, //passaggipo al client dell'url
-    process.env.SUPABASE_SERVICE_ROLE_KEY!, //passaggio della chiave
-    { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } }, //niente autenticazione
-  );
+if (!supabaseUrl || !supabaseServiceRoleKey) {
+  throw new Error('Mancano le env di Supabase (URL o SERVICE_ROLE_KEY)');
 }
+
+export const supabaseServer = createClient(supabaseUrl, supabaseServiceRoleKey, {
+  auth: { persistSession: false },
+});

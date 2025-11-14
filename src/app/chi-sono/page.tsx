@@ -11,7 +11,7 @@ export default function ChiSonoPage() {
         <p>
           Siamo una giovane realtà di Genova nata dalla passione di due ragazzi per il mondo <b>dell’informatica e dell’innovazione digitale.</b>
           <br></br>
-          Unendo formazione solida ed esperienza sul campo, offriamo soluzioni moderne e personalizzate per ogni esigenza web e software.<br></br>
+          Unendo formazione solida ed esperienza sul campo, offriamo soluzioni moderne e personalizzate per ogni esigenza web e software .<br></br>
           Il nostro percorso comprende un <b>Diploma ITS in Full Stack Development</b>, una <b>Laurea in Ingegneria Informatica</b> e<b> esperienze lavorative concrete nel settore</b>, che ci permettono di garantire professionalità, efficienza e <b>risultati di qualità.</b>
         </p>
 
