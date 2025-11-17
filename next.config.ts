@@ -1,16 +1,14 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    domains: ['2it-foodsite.vercel.app'],
-    // oppure:
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: '2it-foodsite.vercel.app',
-    //   },
-    // ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '2it-foodsite-git-feature-nuova-grafica-mettius-projects.vercel.app',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
