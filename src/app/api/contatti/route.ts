@@ -11,30 +11,22 @@ export async function POST(req: Request) {
     const message = String(formData.get('message') || '').trim();
 
     if (!name || !email || !message) {
-      return NextResponse.json(
-        { ok: false, error: 'Compila tutti i campi' },
-        { status: 400 }
-      );
+      return NextResponse.json({ ok: false, error: 'Compila tutti i campi' }, { status: 400 });
     }
 
-    const { error } = await supabaseServer
-      .from('contacts')
-      .insert({ name, email, message });
+    const { error } = await supabaseServer.from('contacts').insert({ name, email, message });
 
     if (error) {
       console.error('[contatti] supabase error', error);
       return NextResponse.json(
         { ok: false, error: 'Errore nel salvataggio su database' },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error('[contatti] errore generico', err);
-    return NextResponse.json(
-      { ok: false, error: 'Errore interno del server' },
-      { status: 500 }
-    );
+    return NextResponse.json({ ok: false, error: 'Errore interno del server' }, { status: 500 });
   }
 }
